@@ -1,0 +1,20 @@
+{:paths ["resources" "src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        org.clojure/spec.alpha {:mvn/version "0.2.176"}
+        org.clojure/test.check {:mvn/version "0.10.0-RC1"}
+        factual/geo {:mvn/version "3.0.0-rc-3"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0-RC1"}}}
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}
+  :depstar
+  {:extra-deps {seancorfield/depstar {:mvn/version "0.1.5"}}
+   :main-opts ["-m" "hf.depstar.jar" "ovid.jar"]}
+  :deploy
+  {:extra-deps {deps-deploy {:mvn/version "0.0.9"}}
+   :main-opts ["-m" "deps-deploy.deps-deploy" "deploy" "ovid.jar"]}}}
