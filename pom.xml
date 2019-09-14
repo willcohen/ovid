@@ -5,6 +5,17 @@
   <artifactId>ovid</artifactId>
   <version>0.1.0-alpha1-SNAPSHOT</version>
   <name>ovid</name>
+  <url>https://github.com/willcohen/ovid</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/willcohen/ovid</url>
+  </scm>
   <dependencies>
     <dependency>
       <groupId>org.clojure</groupId>
