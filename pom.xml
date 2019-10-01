@@ -28,9 +28,19 @@
       <version>0.2.176</version>
     </dependency>
     <dependency>
+      <groupId>manifold</groupId>
+      <artifactId>manifold</artifactId>
+      <version>0.1.9-alpha3</version>
+    </dependency>
+    <dependency>
+      <groupId>byte-streams</groupId>
+      <artifactId>byte-streams</artifactId>
+      <version>0.2.5-alpha2</version>
+    </dependency>
+    <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>test.check</artifactId>
-      <version>0.10.0-RC1</version>
+      <version>0.10.0</version>
     </dependency>
     <dependency>
       <groupId>factual</groupId>
@@ -45,6 +55,10 @@
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
+    </repository>
+    <repository>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
   </repositories>
 </project>

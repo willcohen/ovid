@@ -1,15 +1,17 @@
 {:paths ["resources" "src"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+ :deps {byte-streams/byte-streams {:mvn/version "0.2.5-alpha2"}
+        factual/geo {:mvn/version "3.0.0-rc-3"}
+        manifold/manifold {:mvn/version "0.1.9-alpha3"}
+        org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/spec.alpha {:mvn/version "0.2.176"}
-        org.clojure/test.check {:mvn/version "0.10.0-RC1"}
-        factual/geo {:mvn/version "3.0.0-rc-3"}}
+        org.clojure/test.check {:mvn/version "0.10.0"}}
  :aliases
  {:test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0-RC1"}}}
+         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
   :runner
   {:extra-deps {com.cognitect/test-runner
                 {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
+                 :sha "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}
    :main-opts ["-m" "cognitect.test-runner"
                "-d" "test"]}
   :depstar
