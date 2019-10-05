@@ -1,6 +1,6 @@
 {:paths ["resources" "src"]
  :deps {byte-streams/byte-streams {:mvn/version "0.2.5-alpha2"}
-        factual/geo {:mvn/version "3.0.0-rc-3"}
+        factual/geo {:mvn/version "3.0.0"}
         manifold/manifold {:mvn/version "0.1.9-alpha3"}
         org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/spec.alpha {:mvn/version "0.2.176"}

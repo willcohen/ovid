@@ -45,7 +45,7 @@
     <dependency>
       <groupId>factual</groupId>
       <artifactId>geo</artifactId>
-      <version>3.0.0-rc-3</version>
+      <version>3.0.0</version>
     </dependency>
   </dependencies>
   <build>
