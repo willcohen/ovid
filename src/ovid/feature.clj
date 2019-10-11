@@ -33,6 +33,10 @@
     "Internal helper for to-jts")
   (-to-feature [this] [this properties]
     "Internal helper for to-feature")
+  (-geometry [this]
+    "Internal helper for geometry")
+  (-properties [this]
+    "Internal helper for properties")
   (-assoc-geometry [this s]
     "Internal helper for assoc-geometry")
   (-update-geometry [this f]
@@ -51,6 +55,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -64,6 +70,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -77,6 +85,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -90,6 +100,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -103,6 +115,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -116,6 +130,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -129,6 +145,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -142,6 +160,8 @@
   (-to-feature
     ([this] (-to-feature this {:geohash (geo.geohash/string this)}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -155,6 +175,8 @@
   (-to-feature
     ([this] (-to-feature this {}))
     ([this properties] {:geometry this :properties properties}))
+  (-geometry [this] this)
+  (-properties [this] {})
   (-assoc-geometry [this s] s)
   (-update-geometry [this f] (f this))
   (-assoc-properties [this p] (-to-feature this p))
@@ -168,6 +190,8 @@
   (-to-feature
     ([this] this)
     ([this properties] {:geometry (:geometry this) :properties properties}))
+  (-geometry [this] (:geometry this))
+  (-properties [this] (:properties this))
   (-assoc-geometry [this s] (assoc this :geometry s))
   (-update-geometry [this f] (update this :geometry f))
   (-assoc-properties [this p] (assoc this :properties p))
@@ -181,6 +205,8 @@
   (-to-feature
     ([this] this)
     ([this properties] {:geometry (:geometry this) :properties properties}))
+  (-geometry [this] (:geometry this))
+  (-properties [this] (:properties this))
   (-assoc-geometry [this s] (assoc this :geometry s))
   (-update-geometry [this f] (update this :geometry f))
   (-assoc-properties [this p] (assoc this :properties p))
@@ -196,7 +222,8 @@
   (-to-shape this))
 
 (defn to-jts
-  "Convert geometry of Featurelike to a projected JTS Geometry (wrapping Shapelike from geo library)."
+  "Convert geometry of Featurelike to a projected JTS Geometry
+  (wrapping Shapelike from geo library)."
   ([this]
    (-to-jts this))
   ([this srid]
@@ -208,6 +235,17 @@
    (-to-feature this))
   ([this properties]
    (-to-feature this properties)))
+
+(defn geometry
+  "Get the geometry from a Featurelike."
+  [this]
+  (-geometry this))
+
+(defn properties
+  "Get the properties from a Featurelike.
+  If the Featurelike is a Shapelike, returns an empty map."
+  [this]
+  (-properties this))
 
 (defn assoc-geometry
   "Associate Featurelike with new Shapelike geometry s."
