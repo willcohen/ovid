@@ -39,7 +39,7 @@ Using `tools.deps.alpha`, run `clj -A:test:runner`. Depends on the (still incomp
 ## License
 
 ```
-Copyright (c) 2019 Will Cohen
+Copyright (c) 2019, 2020 Will Cohen
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

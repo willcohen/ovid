@@ -1,6 +1,7 @@
 {:paths ["resources" "src"]
  :deps {byte-streams/byte-streams {:mvn/version "0.2.5-alpha2"}
-        factual/geo {:mvn/version "3.0.0"}
+        factual/geo {:git/url "https://github.com/Factual/geo"
+                     :sha "4566f37e2681113373350632087d2dbf8f145b96"}
         manifold/manifold {:mvn/version "0.1.9-alpha3"}
         org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/spec.alpha {:mvn/version "0.2.176"}
