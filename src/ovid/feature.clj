@@ -366,3 +366,8 @@
   "Convert a Feature's geometry to spatial4j."
   [feat]
   (update-geometry feat to-shape))
+
+(defn feature?
+  "WARNING: this assumes feature is implemented as a hashmap, and uses duck-typing"
+  [feat]
+  (and (map? feat) (contains? feat :geometry) (contains? feat :properties)))
