@@ -20,17 +20,17 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
-      <version>1.10.1</version>
+      <version>1.11.2</version>
     </dependency>
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>spec.alpha</artifactId>
-      <version>0.2.176</version>
+      <version>0.4.233</version>
     </dependency>
     <dependency>
       <groupId>manifold</groupId>
       <artifactId>manifold</artifactId>
-      <version>0.1.9-alpha3</version>
+      <version>0.4.2</version>
     </dependency>
     <dependency>
       <groupId>byte-streams</groupId>
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>test.check</artifactId>
-      <version>0.10.0</version>
+      <version>1.1.1</version>
     </dependency>
     <dependency>
       <groupId>factual</groupId>

@@ -1,4 +1,4 @@
-;; Copyright (c) 2019, 2020 Will Cohen
+;; Copyright (c) 2019, 2020, 2024 Will Cohen
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
             [geo.geohash :as geo.geohash]
             [geo.h3 :as geo.h3])
   (:import (ch.hsr.geohash GeoHash WGS84Point)
-           (com.uber.h3core.util GeoCoord)
+           (com.uber.h3core.util LatLng)
            (org.locationtech.jts.geom Geometry)
            (org.locationtech.spatial4j.shape Shape)
            (org.locationtech.spatial4j.shape.impl
@@ -180,7 +180,7 @@
   (-assoc-properties [this p] (-to-feature this p))
   (-update-properties [this f] (-update-properties (-to-feature this) f))
 
-  GeoCoord
+  LatLng
   (-to-shape [this] (geo.spatial/to-shape this))
   (-to-jts
     ([this] (geo.spatial/to-jts this))
@@ -282,17 +282,17 @@
   (-geometry [this] (:geometry this))
   (-properties [this] (:properties this))
   (-assoc-geometry [this s] (assoc this :geometry s))
+  (-update-geometry
+   ([this f] (update this :geometry f))
+   ([this f & args]
     (-update-geometry
-     ([this f] (update this :geometry f))
-     ([this f & args]
-      (-update-geometry
-       this (fn [x] (apply f (cons x args))))))
+     this (fn [x] (apply f (cons x args))))))
   (-assoc-properties [this p] (assoc this :properties p))
   (-update-properties [this f] (update this :properties f)))
 
-(defn h3->feature
-  [h3]
-  {:geometry (geo.h3/to-jts h3) :properties {:h3 h3}})
+;; (defn h3->feature
+;;   [h3]
+;;   {:geometry (geo.h3/to-jts h3) :properties {:h3 h3}})
 
 (defn ^Shape to-shape
   "Get Shape from geometry of Featurelike
